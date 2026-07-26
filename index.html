@@ -7,17 +7,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --bg-color: #000000;
+            --container-bg: #1c1c1e;
+            --text-color: #ffffff;
+            --text-secondary: #aeaeb2;
+            --accent-color: #ff9f0a;
+            --card-bg: #2c2c2e;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --btn-tel: #3a3a3c;
+        }
+
+        /* 2-Musiqa temasi (Oq, ko'k, kulrang) */
+        body.theme-2 {
+            --bg-color: #f0f2f5;
+            --container-bg: #ffffff;
+            --text-color: #1c1c1e;
+            --text-secondary: #636366;
+            --accent-color: #007aff;
+            --card-bg: #f2f2f7;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --btn-tel: #e5e5ea;
+        }
+
+        /* 3-Musiqa temasi (Qora, qizil, to'q ko'k) */
+        body.theme-3 {
+            --bg-color: #08080a;
+            --container-bg: #141418;
+            --text-color: #ffffff;
+            --text-secondary: #98989f;
+            --accent-color: #ff3b30;
+            --card-bg: #1f1f24;
+            --border-color: rgba(255, 59, 48, 0.2);
+            --btn-tel: #26262d;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             -webkit-tap-highlight-color: transparent;
+            transition: background 0.4s ease, color 0.4s ease;
         }
 
         body {
-            background-color: #000000;
-            color: #ffffff;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -29,17 +65,116 @@
         .container {
             width: 100%;
             max-width: 440px;
-            background: #1c1c1e;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--container-bg);
+            border: 1px solid var(--border-color);
             border-radius: 40px;
             padding: 25px 18px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
             animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pleyer va Musiqa Boshqaruvi */
+        .music-player-box {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .player-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .track-info i {
+            color: var(--accent-color);
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-btn {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--accent-color);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .control-btn:active {
+            transform: scale(0.9);
+        }
+
+        .play-pause-btn {
+            background: var(--accent-color);
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+        }
+
+        body.theme-2 .play-pause-btn {
+            color: #ffffff;
+        }
+
+        /* Ovoz balandligi slayderi */
+        .volume-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 4px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .volume-box i {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .volume-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--border-color);
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            cursor: pointer;
         }
 
         /* Profil Qismi */
@@ -54,8 +189,8 @@
             margin: 0 auto 12px;
             border-radius: 50%;
             padding: 2px;
-            background: #ff9f0a;
-            box-shadow: 0 10px 25px rgba(255, 159, 10, 0.3);
+            background: var(--accent-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .avatar-box img {
@@ -68,13 +203,13 @@
         .username {
             font-size: 22px;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--text-color);
             margin-bottom: 4px;
         }
 
         .fullname {
             font-size: 14px;
-            color: #aeaeb2;
+            color: var(--text-secondary);
             font-weight: 500;
         }
 
@@ -87,35 +222,31 @@
         }
 
         .stat-card {
-            background: #2c2c2e;
+            background: var(--card-bg);
             border-radius: 20px;
             padding: 12px 6px;
             text-align: center;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .stat-card:active {
-            transform: scale(0.95);
+            border: 1px solid var(--border-color);
         }
 
         .stat-num {
             font-size: 16px;
             font-weight: 700;
-            color: #ff9f0a;
+            color: var(--accent-color);
             margin-bottom: 2px;
         }
 
         .stat-text {
             font-size: 11px;
-            color: #aeaeb2;
+            color: var(--text-secondary);
         }
 
-        /* Portfolio (9:16 Gorizontal Scroll Videolar - Kattalashtirilgan) */
+        /* Portfolio Videolar */
         .section-title {
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 12px;
-            color: #ffffff;
+            color: var(--text-color);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -136,22 +267,17 @@
         }
 
         .video-card {
-            flex: 0 0 190px; /* Videolar uchun kattaroq joy */
+            flex: 0 0 190px;
             scroll-snap-align: start;
-            background: #2c2c2e;
+            background: var(--card-bg);
             border-radius: 24px;
             padding: 12px;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
-        .video-card:hover {
-            transform: translateY(-4px);
-        }
-
-        /* 9:16 Reols/Video ramkasi (kattalashtirilgan balandlik) */
         .video-frame {
             width: 100%;
             height: 330px; 
@@ -170,10 +296,9 @@
         .video-name {
             font-size: 12px;
             font-weight: 500;
-            color: #aeaeb2;
+            color: var(--text-secondary);
         }
 
-        /* Apple uslubidagi yulduzchalar */
         .rating-stars {
             display: flex;
             gap: 4px;
@@ -182,12 +307,12 @@
 
         .rating-stars i {
             font-size: 13px;
-            color: #48484a;
+            color: var(--border-color);
             transition: color 0.2s, transform 0.2s;
         }
 
         .rating-stars i.active {
-            color: #ff9f0a;
+            color: var(--accent-color);
             transform: scale(1.1);
         }
 
@@ -199,10 +324,11 @@
         }
 
         .contact-btn {
-            background: #2c2c2e;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             padding: 14px;
             border-radius: 20px;
-            color: #ffffff;
+            color: var(--text-color);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -210,7 +336,7 @@
             gap: 8px;
             font-size: 13px;
             font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.2s;
         }
 
         .contact-btn:active {
@@ -218,23 +344,52 @@
         }
 
         .contact-btn.tg {
-            background: #ff9f0a;
-            color: #000000;
+            background: var(--accent-color);
+            color: #ffffff;
+            border: none;
+        }
+
+        body.theme-2 .contact-btn.tg {
+            color: #ffffff;
         }
 
         .contact-btn.tel {
-            background: #3a3a3c;
-            color: #ffffff;
+            background: var(--btn-tel);
         }
     </style>
 </head>
-<body>
+<body class="theme-1">
 
     <div class="container">
+        
+        <!-- Musiqa Pleyeri (Oldinga/Orqaga, Ovoz balandligi bilan) -->
+        <div class="music-player-box">
+            <div class="player-top">
+                <div class="track-info">
+                    <i class="fa-solid fa-music"></i>
+                    <span id="track-name">Musiqa 1 (Apple Vibe)</span>
+                </div>
+                <div class="player-controls">
+                    <button class="control-btn" onclick="prevTrack()" title="Oldingi musiqa"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="control-btn play-pause-btn" onclick="togglePlay()" id="play-icon-btn"><i class="fa-solid fa-play" id="play-pause-icon"></i></button>
+                    <button class="control-btn" onclick="nextTrack()" title="Keyingi musiqa"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+            </div>
+            <div class="volume-box">
+                <i class="fa-solid fa-volume-low"></i>
+                <input type="range" min="0" max="1" step="0.05" value="0.5" class="volume-slider" oninput="changeVolume(this.value)">
+                <i class="fa-solid fa-volume-high"></i>
+            </div>
+        </div>
+
+        <!-- Audio Elementi -->
+        <audio id="audio-element" loop>
+            <source src="musiqa1.mp3" type="audio/mp3">
+        </audio>
+
         <!-- Profil Qismi -->
         <div class="profile-header">
             <div class="avatar-box">
-                <!-- Avataringiz uchun yangi rasm kodi ulandi -->
                 <img src="DE06565B-3157-4690-8C6A-AEF4FB8996D4" alt="Xanimkulov Umrzoq">
             </div>
             <div class="username">xanimkulov.pro</div>
@@ -257,7 +412,7 @@
             </div>
         </div>
 
-        <!-- Portfolio (9:16 Gorizontal Scroll Videolar - Kattalashtirilgan) -->
+        <!-- Portfolio (9:16 Gorizontal Scroll Videolar) -->
         <div class="section-title">
             <i class="fa-solid fa-clapperboard"></i> Portfolio (9:16)
         </div>
@@ -266,7 +421,7 @@
             <!-- 1-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_1.mp4" type="video/mp4">
+                    <source src="video1.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #1</span>
@@ -283,7 +438,7 @@
             <!-- 2-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_2.mp4" type="video/mp4">
+                    <source src="video2.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #2</span>
@@ -300,7 +455,7 @@
             <!-- 3-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_3.mp4" type="video/mp4">
+                    <source src="video3.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #3</span>
@@ -317,7 +472,7 @@
             <!-- 4-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_4.mp4" type="video/mp4">
+                    <source src="video4.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #4</span>
@@ -334,7 +489,7 @@
             <!-- 5-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_5.mp4" type="video/mp4">
+                    <source src="video5.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #5</span>
@@ -365,6 +520,58 @@
     </div>
 
     <script>
+        // Musiqa va Temalar ro'yxati
+        const playlist = [
+            { src: "musiqa1.mp3", name: "Musiqa 1 (Apple Vibe)", theme: "theme-1" },
+            { src: "musiqa2.mp3", name: "Musiqa 2 (Clean Modern)", theme: "theme-2" },
+            { src: "musiqa3.mp3", name: "Musiqa 3 (Dark & Red Drive)", theme: "theme-3" }
+        ];
+
+        let currentIndex = 0;
+        const audio = document.getElementById('audio-element');
+        const trackNameEl = document.getElementById('track-name');
+        const playPauseIcon = document.getElementById('play-pause-icon');
+
+        audio.volume = 0.5; // Boshlang'ich ovoz darajasi 50%
+
+        function loadTrack(index) {
+            audio.src = playlist[index].src;
+            trackNameEl.innerText = playlist[index].name;
+            
+            // Temalarni o'zgartirish
+            document.body.className = playlist[index].theme;
+            audio.load();
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playPauseIcon.className = "fa-solid fa-pause";
+            } else {
+                audio.pause();
+                playPauseIcon.className = "fa-solid fa-play";
+            }
+        }
+
+        function nextTrack() {
+            currentIndex = (currentIndex + 1) % playlist.length;
+            loadTrack(currentIndex);
+            audio.play();
+            playPauseIcon.className = "fa-solid fa-pause";
+        }
+
+        function prevTrack() {
+            currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+            loadTrack(currentIndex);
+            audio.play();
+            playPauseIcon.className = "fa-solid fa-pause";
+        }
+
+        function changeVolume(val) {
+            audio.volume = val;
+        }
+
+        // Yulduzchalar funksiyasi
         function setRating(starElement, ratingNumber) {
             const starsContainer = starElement.parentElement;
             const stars = starsContainer.querySelectorAll('i');
