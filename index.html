@@ -12,11 +12,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: #0b1310; /* To'q yashil-qora tusli skromni fon */
-            color: #f4f6f4;
+            background-color: #000000; /* Apple qora foni */
+            color: #ffffff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -25,41 +26,20 @@
             overflow-x: hidden;
         }
 
-        /* To'q yashil va malochniy suyuq (Liquid) nurlar */
-        .bg-blob1 {
-            position: absolute;
-            top: -120px;
-            left: -120px;
-            width: 320px;
-            height: 320px;
-            background: linear-gradient(135deg, #064e3b, #047857);
-            filter: blur(100px);
-            opacity: 0.45;
-            z-index: -1;
-        }
-
-        .bg-blob2 {
-            position: absolute;
-            bottom: -120px;
-            right: -120px;
-            width: 320px;
-            height: 320px;
-            background: linear-gradient(135deg, #0f766e, #134e4a);
-            filter: blur(100px);
-            opacity: 0.4;
-            z-index: -1;
-        }
-
         .container {
             width: 100%;
-            max-width: 480px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(244, 246, 244, 0.12);
-            border-radius: 36px;
+            max-width: 440px;
+            background: #1c1c1e; /* Apple kalkulyator blok rangi */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
             padding: 30px 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Profil Qismi */
@@ -69,12 +49,13 @@
         }
 
         .avatar-box {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             margin: 0 auto 15px;
             border-radius: 50%;
-            padding: 3px;
-            background: linear-gradient(135deg, #059669, #fef08a); /* Yashil va malochniy/sariqimtir hoshiya */
+            padding: 2px;
+            background: #ff9f0a; /* Apple olovrang aksent */
+            box-shadow: 0 10px 25px rgba(255, 159, 10, 0.3);
         }
 
         .avatar-box img {
@@ -87,13 +68,13 @@
         .username {
             font-size: 22px;
             font-weight: 700;
-            color: #fef9c3; /* Malochniy tus */
+            color: #ffffff;
             margin-bottom: 4px;
         }
 
         .fullname {
             font-size: 14px;
-            color: #a3b899;
+            color: #aeaeb2;
             font-weight: 500;
         }
 
@@ -106,102 +87,111 @@
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(244, 246, 244, 0.08);
-            padding: 12px 8px;
+            background: #2c2c2e; /* Kalkulyator kulrang tugma rangi */
             border-radius: 20px;
+            padding: 14px 8px;
             text-align: center;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .stat-card:active {
+            transform: scale(0.95);
         }
 
         .stat-num {
             font-size: 16px;
             font-weight: 700;
-            color: #34d399; /* Och yashil */
+            color: #ff9f0a; /* Olovrang raqamlar */
             margin-bottom: 2px;
         }
 
         .stat-text {
             font-size: 11px;
-            color: #9ca3af;
+            color: #aeaeb2;
         }
 
-        /* Portfolio (Videolar) Bo'limi */
+        /* Portfolio (9:16 Gorizontal Scroll Videolar) */
         .section-title {
             font-size: 15px;
             font-weight: 600;
-            margin-bottom: 15px;
-            color: #fef9c3;
+            margin-bottom: 12px;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .videos-container {
+        .horizontal-scroll-container {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            gap: 14px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 10px;
             margin-bottom: 25px;
-            max-height: 360px;
-            overflow-y: auto;
-            padding-right: 5px;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .videos-container::-webkit-scrollbar {
-            width: 4px;
-        }
-        .videos-container::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.2);
-            border-radius: 10px;
+        .horizontal-scroll-container::-webkit-scrollbar {
+            display: none; /* Scrollbar'ni yashirish */
         }
 
         .video-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(244, 246, 244, 0.08);
-            border-radius: 20px;
-            padding: 12px;
+            flex: 0 0 150px; /* 9:16 format uchun eni */
+            scroll-snap-align: start;
+            background: #2c2c2e;
+            border-radius: 24px;
+            padding: 10px;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            transition: transform 0.3s ease;
         }
 
+        .video-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* 9:16 Reols/Video ramkasi */
         .video-frame {
             width: 100%;
-            height: 180px;
-            border-radius: 14px;
-            background: #0f1715;
+            height: 266px; /* 9:16 proporsiya */
+            border-radius: 16px;
+            background: #000000;
             object-fit: cover;
         }
 
         .video-info {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 6px;
             align-items: center;
         }
 
         .video-name {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
-            color: #d1d5db;
+            color: #aeaeb2;
         }
 
-        /* Yulduzchalar (Baholash) */
+        /* Apple uslubidagi yulduzchalar */
         .rating-stars {
             display: flex;
-            gap: 4px;
+            gap: 3px;
             cursor: pointer;
         }
 
         .rating-stars i {
-            font-size: 14px;
-            color: #374151;
-            transition: color 0.2s;
+            font-size: 12px;
+            color: #48484a;
+            transition: color 0.2s, transform 0.2s;
         }
 
         .rating-stars i.active {
-            color: #fef08a; /* Malochniy-sariq yulduzcha */
+            color: #ff9f0a; /* Olovrang yulduzcha */
+            transform: scale(1.1);
         }
 
-        /* Bog'lanish Tugmalari */
+        /* Bog'lanish Tugmalari (Apple Style) */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -209,10 +199,9 @@
         }
 
         .contact-btn {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(244, 246, 244, 0.1);
-            padding: 12px;
-            border-radius: 18px;
+            background: #2c2c2e;
+            padding: 14px;
+            border-radius: 20px;
             color: #ffffff;
             text-decoration: none;
             display: flex;
@@ -221,35 +210,31 @@
             gap: 8px;
             font-size: 13px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .contact-btn:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-2px);
+        .contact-btn:active {
+            transform: scale(0.95);
         }
 
         .contact-btn.tg {
-            background: linear-gradient(135deg, rgba(6, 95, 70, 0.3), rgba(4, 120, 87, 0.5));
-            border-color: rgba(52, 211, 153, 0.3);
+            background: #ff9f0a; /* Olovrang asosiy Apple tugma */
+            color: #000000;
         }
 
         .contact-btn.tel {
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.3), rgba(13, 148, 136, 0.5));
-            border-color: rgba(45, 212, 191, 0.3);
+            background: #3a3a3c;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-blob1"></div>
-    <div class="bg-blob2"></div>
-
     <div class="container">
         <!-- Profil Qismi -->
         <div class="profile-header">
             <div class="avatar-box">
-                <img src="DE06565B-3157-4690-8C6A-AEF4FB8996D4" alt="Xanimkulov Umrzoq">
+                <img src="DE06565B-3157-4690-8C6A-AEF4FB8996D4.png" alt="Xanimkulov Umrzoq">
             </div>
             <div class="username">xanimkulov.pro</div>
             <div class="fullname">Xanimkulov Umrzoq</div>
@@ -271,12 +256,12 @@
             </div>
         </div>
 
-        <!-- Portfolio (5 ta Video) -->
+        <!-- Portfolio (9:16 Gorizontal Scroll Videolar) -->
         <div class="section-title">
-            <i class="fa-solid fa-video"></i> Mening Ishlarim (Portfolio)
+            <i class="fa-solid fa-clapperboard"></i> Portfolio (9:16)
         </div>
 
-        <div class="videos-container">
+        <div class="horizontal-scroll-container">
             <!-- 1-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
@@ -284,7 +269,7 @@
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #1</span>
-                    <div class="rating-stars" onclick="rateVideo(event)">
+                    <div class="rating-stars">
                         <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
@@ -301,7 +286,7 @@
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #2</span>
-                    <div class="rating-stars" onclick="rateVideo(event)">
+                    <div class="rating-stars">
                         <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
@@ -318,7 +303,7 @@
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #3</span>
-                    <div class="rating-stars" onclick="rateVideo(event)">
+                    <div class="rating-stars">
                         <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
@@ -335,7 +320,7 @@
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #4</span>
-                    <div class="rating-stars" onclick="rateVideo(event)">
+                    <div class="rating-stars">
                         <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
@@ -352,7 +337,7 @@
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #5</span>
-                    <div class="rating-stars" onclick="rateVideo(event)">
+                    <div class="rating-stars">
                         <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
                         <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
