@@ -2,452 +2,397 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Fatxulla & Zeboxon </div> — To'y Taklifnomasi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xanimkulov.pro — Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        :root {
-            --bg-color: #0b0b0f;
-            --card-bg: rgba(255, 255, 255, 0.04);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --glass-blur: blur(20px);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: #0b0b0f;
+            color: #ffffff;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             overflow-x: hidden;
-            position: relative;
         }
 
-        .ambient-glow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .glow-blob {
+        /* Liquid Fon Effektlari */
+        .bg-blob1 {
             position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.35;
-            animation: floatBlob 12s ease-in-out infinite alternate;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            filter: blur(90px);
+            opacity: 0.5;
+            z-index: -1;
         }
 
-        .blob-1 { background: #e11d48; top: -100px; left: -100px; }
-        .blob-2 { background: #2563eb; bottom: -100px; right: -100px; animation-delay: -6s; }
-
-        @keyframes floatBlob {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(40px, 60px) scale(1.15); }
-        }
-
-        .music-control {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        #welcome-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(5, 5, 8, 0.9);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            text-align: center;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
-        }
-
-        #welcome-overlay.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .welcome-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 40px 30px;
-            border-radius: 32px;
-            max-width: 400px;
-            width: 100%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-        }
-
-        .welcome-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 48px;
-            color: #fb7185;
-            margin-bottom: 8px;
-        }
-
-        .welcome-subtitle {
-            font-size: 15px;
-            color: var(--text-muted);
-            margin-bottom: 28px;
-            line-height: 1.5;
-        }
-
-        .liquid-btn {
-            position: relative;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            width: 100%;
+        .bg-blob2 {
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            filter: blur(90px);
+            opacity: 0.5;
+            z-index: -1;
         }
 
         .container {
+            width: 100%;
             max-width: 480px;
-            margin: 0 auto;
-            padding: 40px 20px 80px 20px;
-            display: none;
-            flex-direction: column;
-            gap: 28px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 36px;
+            padding: 30px 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .container.visible {
-            display: flex;
+        /* Profil Qismi */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
         }
 
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--card-border);
-            border-radius: 28px;
-            padding: 32px 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        .avatar-box {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #3b82f6, #ec4899);
+        }
+
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .username {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .fullname {
+            font-size: 14px;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        /* Statistika Bloki */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 8px;
+            border-radius: 20px;
             text-align: center;
         }
 
-        .names {
-            font-family: 'Great Vibes', cursive;
-            font-size: 52px;
-            color: #ffffff;
-            line-height: 1.1;
-            margin-bottom: 8px;
+        .stat-num {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f43f5e;
+            margin-bottom: 2px;
         }
 
-        .ampersand {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 24px;
-            color: #fb7185;
-            display: block;
-            margin: 4px 0;
+        .stat-text {
+            font-size: 11px;
+            color: #9ca3af;
         }
 
-        .date-badge {
-            display: inline-block;
-            background: rgba(244, 63, 94, 0.15);
-            border: 1px solid rgba(244, 63, 94, 0.3);
-            color: #fb7185;
-            padding: 8px 18px;
-            border-radius: 50px;
+        /* Portfolio (Videolar) Bo'limi */
+        .section-title {
+            font-size: 16px;
             font-weight: 600;
-            font-size: 15px;
-            margin-bottom: 16px;
-        }
-
-        .event-time { font-size: 26px; font-weight: 700; color: white; margin-bottom: 12px; }
-        .venue-title { font-size: 18px; font-weight: 600; color: white; margin-bottom: 6px; }
-        .venue-address { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
-
-        .countdown-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            margin-bottom: 15px;
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
             gap: 8px;
-            margin-top: 15px;
         }
 
-        .countdown-box {
+        .videos-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+            max-height: 350px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .videos-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .videos-container::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+
+        .video-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 10px 4px;
-            border-radius: 14px;
-        }
-
-        .countdown-number { font-size: 20px; font-weight: 700; color: #fb7185; }
-        .countdown-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; }
-
-        .creative-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
-            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
-            padding: 22px;
-            margin: 15px 0;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            text-align: left;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .card-chip {
-            width: 36px;
-            height: 26px;
-            background: linear-gradient(135deg, #ffd700, #ffa500);
-            border-radius: 6px;
-            margin-bottom: 12px;
-            opacity: 0.9;
+        .video-frame {
+            width: 100%;
+            height: 180px;
+            border-radius: 14px;
+            background: #181820;
+            object-fit: cover;
         }
 
-        .card-number-display {
-            font-family: monospace;
-            font-size: 18px;
-            letter-spacing: 3px;
-            color: #ffffff;
-            margin-bottom: 12px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .card-footer {
+        .video-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .card-holder {
-            font-size: 13px;
-            color: #94a3b8;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .bank-logo {
-            font-size: 14px;
-            font-weight: 700;
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.1);
-            padding: 4px 10px;
-            border-radius: 20px;
-        }
-
-        .copy-btn, .rsvp-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
+        .video-name {
             font-size: 13px;
             font-weight: 500;
+            color: #d1d5db;
+        }
+
+        /* Yulduzchalar (Baholash) */
+        .rating-stars {
+            display: flex;
+            gap: 4px;
             cursor: pointer;
-            margin-top: 5px;
-            transition: all 0.2s ease;
         }
 
-        .copy-btn:active, .rsvp-btn:active {
-            transform: scale(0.96);
-        }
-
-        .rsvp-btn {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            border: 1px solid rgba(59, 130, 246, 0.4);
-            width: 100%;
-            padding: 14px;
-            font-size: 15px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: rgba(15, 23, 42, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
+        .rating-stars i {
             font-size: 14px;
-            transition: transform 0.4s ease;
-            z-index: 10000;
+            color: #4b5563;
+            transition: color 0.2s;
         }
-        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        .rating-stars i.active {
+            color: #f59e0b;
+        }
+
+        /* Bog'lanish Tugmalari */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .contact-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 12px;
+            border-radius: 18px;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .contact-btn.tg {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.2), rgba(0, 136, 204, 0.4));
+            border-color: rgba(0, 136, 204, 0.4);
+        }
+
+        .contact-btn.tel {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.4));
+            border-color: rgba(16, 185, 129, 0.4);
+        }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow">
-        <div class="glow-blob blob-1"></div>
-        <div class="glow-blob blob-2"></div>
-    </div>
+    <div class="bg-blob1"></div>
+    <div class="bg-blob2"></div>
 
-    <!-- Fon Musiqasi -->
-    <audio id="bg-music" loop>
-        <source src="yoningdaman.m4a.m4a" type="audio/mp4">
-    </audio>
-
-    <button class="music-control" id="music-toggle" title="Musiqa">🎵</button>
-
-    <!-- Kirish ekrani (Fatxulla & Zeboxon) -->
-    <div id="welcome-overlay">
-        <div class="welcome-card">
-            <div style="font-size: 35px; margin-bottom: 12px;">❤️</div>
-            <div class="welcome-title">Fatxulla & Zeboxon</div>
-            <div class="welcome-subtitle">Sizni hayotimizdagi eng baxtli kunimizga taklif qilamiz.</div>
-            <button class="liquid-btn" id="open-invitation">Taklifnomani ochish ✨</button>
-        </div>
-    </div>
-
-    <!-- Asosiy Tarkib -->
-    <div class="container" id="main-content">
-        <div class="glass-card" style="padding: 40px 20px;">
-            <div style="font-size: 30px; color: #fb7185; margin-bottom: 10px;">❤️</div>
-            <div class="names">Fatxulla <span class="ampersand">&</span> Zeboxon</div>
-            <div class="venue-address">Sizni to'yimizgda ko'rsak hursand bo'lar edik.</div>
+    <div class="container">
+        <!-- Profil Qismi -->
+        <div class="profile-header">
+            <div class="avatar-box">
+                <!-- Avatar rasmingiz -->
+                <img src="image_4.png" alt="Xanimkulov Umrzoq">
+            </div>
+            <div class="username">xanimkulov.pro</div>
+            <div class="fullname">Xanimkulov Umrzoq</div>
         </div>
 
-        <div class="glass-card">
-            <div class="date-badge">13 Sentabr 2026</div>
-            <div class="event-time">19:00</div>
-            <div class="venue-title">Orom To'yxonasi</div>
-            <div class="venue-address">Toshkent viloyati Bekobod tumani Zafar shaharchasi</div>
-        </div>
-
-        <div class="glass-card">
-            <div style="font-weight: 600; margin-bottom: 10px;">To'ygacha qoldi</div>
-            <div class="countdown-grid">
-                <div class="countdown-box"><div class="countdown-number" id="days">00</div><div class="countdown-label">Kun</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="hours">00</div><div class="countdown-label">Soat</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="minutes">00</div><div class="countdown-label">Min</div></div>
-                <div class="countdown-box"><div class="countdown-number" id="seconds">00</div><div class="countdown-label">Sek</div></div>
+        <!-- Statistika -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-num">2+ yil</div>
+                <div class="stat-text">Tajriba</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">100+</div>
+                <div class="stat-text">Mijozlar</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">20+</div>
+                <div class="stat-text">Loyihalar</div>
             </div>
         </div>
 
-        <!-- To'yona -->
-        <div class="glass-card">
-            <div style="font-weight: 700; margin-bottom: 4px; font-size: 16px;">🎁 To'yona</div>
-            <div class="venue-address" style="margin-bottom: 10px;">Kichik hissangiz biz uchun qadrli</div>
-            
-            <div class="creative-card">
-                <div class="card-chip"></div>
-                <div class="card-number-display">5614 6821 1130 4913</div>
-                <div class="card-footer">
-                    <div class="card-holder">Fatxulla Xusanboyev</div>
-                    <div class="bank-logo">UzCard / Humo</div>
+        <!-- Portfolio (5 ta Video) -->
+        <div class="section-title">
+            <i class="fa-solid fa-video"></i> Mening Ishlarim (Portfolio)
+        </div>
+
+        <div class="videos-container">
+            <!-- 1-Video -->
+            <div class="video-card">
+                <video class="video-frame" controls poster="">
+                    <source src="VIDEO_HAVolasi_1.mp4" type="video/mp4">
+                    Sizning brauzeringiz videoni qo'llab-quvvatlamaydi.
+                </video>
+                <div class="video-info">
+                    <span class="video-name">Loyiha #1</span>
+                    <div class="rating-stars" onclick="rateVideo(event)">
+                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
+                    </div>
                 </div>
             </div>
 
-            <button class="copy-btn" onclick="copyCard('561468211304913', this)">📋 Karta raqamini nusxalash</button>
+            <!-- 2-Video -->
+            <div class="video-card">
+                <video class="video-frame" controls>
+                    <source src="VIDEO_HAVolasi_2.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <span class="video-name">Loyiha #2</span>
+                    <div class="rating-stars" onclick="rateVideo(event)">
+                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-Video -->
+            <div class="video-card">
+                <video class="video-frame" controls>
+                    <source src="VIDEO_HAVolasi_3.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <span class="video-name">Loyiha #3</span>
+                    <div class="rating-stars" onclick="rateVideo(event)">
+                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4-Video -->
+            <div class="video-card">
+                <video class="video-frame" controls>
+                    <source src="VIDEO_HAVolasi_4.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <span class="video-name">Loyiha #4</span>
+                    <div class="rating-stars" onclick="rateVideo(event)">
+                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5-Video -->
+            <div class="video-card">
+                <video class="video-frame" controls>
+                    <source src="VIDEO_HAVolasi_5.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <span class="video-name">Loyiha #5</span>
+                    <div class="rating-stars" onclick="rateVideo(event)">
+                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
+                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Tashrifingiz -->
-        <div class="glass-card">
-            <div style="font-weight: 700; margin-bottom: 8px;">💌 Tashrifingiz</div>
-            <div class="venue-address" style="margin-bottom: 14px;">Kelishingizni oldindan tasdiqlang</div>
-            <a href="https://t.me/fatxullaxusanboyev" target="_blank" class="rsvp-btn">✅ Men boraman (Telegram)</a>
+        <!-- Bog'lanish -->
+        <div class="section-title">
+            <i class="fa-solid fa-paper-plane"></i> Bog'lanish
+        </div>
+
+        <div class="contact-grid">
+            <a href="https://t.me/xanimkulov" target="_blank" class="contact-btn tg">
+                <i class="fa-brands fa-telegram fa-lg"></i> Telegram
+            </a>
+            <a href="tel:+998949990223" class="contact-btn tel">
+                <i class="fa-solid fa-phone"></i> Qo'ng'iroq
+            </a>
         </div>
     </div>
 
-    <div class="toast" id="toast-msg">Nusxalandi!</div>
-
     <script>
-        const welcomeOverlay = document.getElementById('welcome-overlay');
-        const openBtn = document.getElementById('open-invitation');
-        const mainContent = document.getElementById('main-content');
-        const bgMusic = document.getElementById('bg-music');
-        const musicToggle = document.getElementById('music-toggle');
-        let isPlaying = false;
-
-        openBtn.addEventListener('click', () => {
-            welcomeOverlay.classList.add('hidden');
-            mainContent.classList.add('visible');
-            bgMusic.play().then(() => {
-                isPlaying = true;
-                musicToggle.innerHTML = '🔊';
-            }).catch(e => console.log(e));
-        });
-
-        musicToggle.addEventListener('click', () => {
-            if (isPlaying) {
-                bgMusic.pause();
-                isPlaying = false;
-                musicToggle.innerHTML = '🔇';
-            } else {
-                bgMusic.play();
-                isPlaying = true;
-                musicToggle.innerHTML = '🔊';
-            }
-        });
-
-        const weddingDate = new Date('2026-09-13T19:00:00').getTime();
-        setInterval(() => {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-            if (distance > 0) {
-                document.getElementById('days').innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-                document.getElementById('hours').innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
-            }
-        }, 1000);
-
-        function copyCard(text, btn) {
-            navigator.clipboard.writeText(text).then(() => {
-                btn.innerText = '✅ Nusxalandi!';
-                showToast("Karta raqami nusxalandi!");
-                setTimeout(() => btn.innerText = '📋 Karta raqamini nusxalash', 2000);
+        // Yulduzchalarni bosib baholash funksiyasi
+        function setRating(starElement, ratingNumber) {
+            const starsContainer = starElement.parentElement;
+            const stars = starsContainer.querySelectorAll('i');
+            
+            stars.forEach((star, index) => {
+                if (index < ratingNumber) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
             });
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast-msg');
-            toast.innerText = msg;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2500);
         }
     </script>
 </body>
