@@ -16,23 +16,23 @@
         }
 
         body {
-            background-color: #000000; /* Apple qora foni */
+            background-color: #000000;
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             overflow-x: hidden;
         }
 
         .container {
             width: 100%;
             max-width: 440px;
-            background: #1c1c1e; /* Apple kalkulyator blok rangi */
+            background: #1c1c1e;
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 40px;
-            padding: 30px 20px;
+            padding: 25px 18px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
             animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -45,16 +45,16 @@
         /* Profil Qismi */
         .profile-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .avatar-box {
             width: 100px;
             height: 100px;
-            margin: 0 auto 15px;
+            margin: 0 auto 12px;
             border-radius: 50%;
             padding: 2px;
-            background: #ff9f0a; /* Apple olovrang aksent */
+            background: #ff9f0a;
             box-shadow: 0 10px 25px rgba(255, 159, 10, 0.3);
         }
 
@@ -83,13 +83,13 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .stat-card {
-            background: #2c2c2e; /* Kalkulyator kulrang tugma rangi */
+            background: #2c2c2e;
             border-radius: 20px;
-            padding: 14px 8px;
+            padding: 12px 6px;
             text-align: center;
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -101,7 +101,7 @@
         .stat-num {
             font-size: 16px;
             font-weight: 700;
-            color: #ff9f0a; /* Olovrang raqamlar */
+            color: #ff9f0a;
             margin-bottom: 2px;
         }
 
@@ -110,7 +110,7 @@
             color: #aeaeb2;
         }
 
-        /* Portfolio (9:16 Gorizontal Scroll Videolar) */
+        /* Portfolio (9:16 Gorizontal Scroll Videolar - Kattalashtirilgan) */
         .section-title {
             font-size: 15px;
             font-weight: 600;
@@ -123,24 +123,24 @@
 
         .horizontal-scroll-container {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+            padding-bottom: 12px;
+            margin-bottom: 22px;
             -webkit-overflow-scrolling: touch;
         }
 
         .horizontal-scroll-container::-webkit-scrollbar {
-            display: none; /* Scrollbar'ni yashirish */
+            display: none;
         }
 
         .video-card {
-            flex: 0 0 150px; /* 9:16 format uchun eni */
+            flex: 0 0 190px; /* Videolar uchun kattaroq joy */
             scroll-snap-align: start;
             background: #2c2c2e;
             border-radius: 24px;
-            padding: 10px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -151,10 +151,10 @@
             transform: translateY(-4px);
         }
 
-        /* 9:16 Reols/Video ramkasi */
+        /* 9:16 Reols/Video ramkasi (kattalashtirilgan balandlik) */
         .video-frame {
             width: 100%;
-            height: 266px; /* 9:16 proporsiya */
+            height: 330px; 
             border-radius: 16px;
             background: #000000;
             object-fit: cover;
@@ -176,22 +176,22 @@
         /* Apple uslubidagi yulduzchalar */
         .rating-stars {
             display: flex;
-            gap: 3px;
+            gap: 4px;
             cursor: pointer;
         }
 
         .rating-stars i {
-            font-size: 12px;
+            font-size: 13px;
             color: #48484a;
             transition: color 0.2s, transform 0.2s;
         }
 
         .rating-stars i.active {
-            color: #ff9f0a; /* Olovrang yulduzcha */
+            color: #ff9f0a;
             transform: scale(1.1);
         }
 
-        /* Bog'lanish Tugmalari (Apple Style) */
+        /* Bog'lanish Tugmalari */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -218,7 +218,7 @@
         }
 
         .contact-btn.tg {
-            background: #ff9f0a; /* Olovrang asosiy Apple tugma */
+            background: #ff9f0a;
             color: #000000;
         }
 
@@ -234,6 +234,7 @@
         <!-- Profil Qismi -->
         <div class="profile-header">
             <div class="avatar-box">
+                <!-- Avataringiz uchun yangi rasm kodi ulandi -->
                 <img src="DE06565B-3157-4690-8C6A-AEF4FB8996D4" alt="Xanimkulov Umrzoq">
             </div>
             <div class="username">xanimkulov.pro</div>
@@ -256,7 +257,7 @@
             </div>
         </div>
 
-        <!-- Portfolio (9:16 Gorizontal Scroll Videolar) -->
+        <!-- Portfolio (9:16 Gorizontal Scroll Videolar - Kattalashtirilgan) -->
         <div class="section-title">
             <i class="fa-solid fa-clapperboard"></i> Portfolio (9:16)
         </div>
