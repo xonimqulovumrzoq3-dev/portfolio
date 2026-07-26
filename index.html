@@ -18,7 +18,6 @@
             --btn-tel: #3a3a3c;
         }
 
-        /* 2-Musiqa temasi (Oq, ko'k, kulrang) */
         body.theme-2 {
             --bg-color: #f0f2f5;
             --container-bg: #ffffff;
@@ -30,7 +29,6 @@
             --btn-tel: #e5e5ea;
         }
 
-        /* 3-Musiqa temasi (Qora, qizil, to'q ko'k) */
         body.theme-3 {
             --bg-color: #08080a;
             --container-bg: #141418;
@@ -78,7 +76,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Pleyer va Musiqa Boshqaruvi */
+        /* Musiqa Pleyeri */
         .music-player-box {
             background: var(--card-bg);
             border-radius: 20px;
@@ -144,7 +142,6 @@
             height: 36px;
         }
 
-        /* Ovoz balandligi slayderi */
         .volume-box {
             display: flex;
             align-items: center;
@@ -240,7 +237,7 @@
             color: var(--text-secondary);
         }
 
-        /* Portfolio Videolar */
+        /* Portfolio (Ustma-ust Instagram Videolar) */
         .section-title {
             font-size: 15px;
             font-weight: 600;
@@ -251,95 +248,27 @@
             gap: 8px;
         }
 
-        .horizontal-scroll-container {
+        .instagram-stack {
             display: flex;
-            gap: 16px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 12px;
+            flex-direction: column;
+            gap: 15px;
             margin-bottom: 22px;
-            -webkit-overflow-scrolling: touch;
         }
 
-        .horizontal-scroll-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .video-card {
-            flex: 0 0 190px;
-            scroll-snap-align: start;
+        .insta-box {
             background: var(--card-bg);
             border-radius: 24px;
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            padding: 10px;
             border: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            height: 330px;
-        }
-
-        .video-frame {
-            width: 100%;
-            height: 100%;
-            border-radius: 16px;
-            background: #000000;
-            object-fit: cover;
-        }
-
-        /* Video ovozini boshqarish tugmasi */
-        .video-mute-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+            overflow: hidden;
             display: flex;
-            align-items: center;
             justify-content: center;
-            cursor: pointer;
-            font-size: 12px;
-            backdrop-filter: blur(4px);
-            z-index: 2;
         }
 
-        .video-info {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            align-items: center;
-        }
-
-        .video-name {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-secondary);
-        }
-
-        .rating-stars {
-            display: flex;
-            gap: 4px;
-            cursor: pointer;
-        }
-
-        .rating-stars i {
-            font-size: 13px;
-            color: var(--border-color);
-            transition: color 0.2s, transform 0.2s;
-        }
-
-        .rating-stars i.active {
-            color: var(--accent-color);
-            transform: scale(1.1);
+        /* Instagram embed responsive dizayni uchun */
+        .insta-box iframe {
+            border-radius: 16px;
+            max-width: 100%;
         }
 
         /* Bog'lanish Tugmalari */
@@ -383,6 +312,7 @@
 
     <div class="container">
         
+        <!-- Musiqa Pleyeri -->
         <div class="music-player-box">
             <div class="player-top">
                 <div class="track-info">
@@ -406,6 +336,7 @@
             <source src="Chubina East Duo.m4a" type="audio/mp4">
         </audio>
 
+        <!-- Profil Qismi -->
         <div class="profile-header">
             <div class="avatar-box">
                 <img src="DE06565B-3157-4690-8C6A-AEF4FB8996D4.png" alt="Xanimkulov Umrzoq">
@@ -414,6 +345,7 @@
             <div class="fullname">Xanimkulov Umrzoq</div>
         </div>
 
+        <!-- Statistika -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-num">2+ yil</div>
@@ -429,107 +361,27 @@
             </div>
         </div>
 
+        <!-- Portfolio (Ustma-ust turgan 2 ta Instagram Video) -->
         <div class="section-title">
-            <i class="fa-solid fa-clapperboard"></i> Portfolio (9:16)
+            <i class="fa-solid fa-clapperboard"></i> Instagram Portfolio
         </div>
 
-        <div class="horizontal-scroll-container">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <button class="video-mute-btn" onclick="toggleVideoMute(this)"><i class="fa-solid fa-volume-xmark"></i></button>
-                    <video class="video-frame" muted playsinline controls>
-                        <source src="video1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video-info">
-                    <span class="video-name">Loyiha #1</span>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
-                    </div>
-                </div>
+        <div class="instagram-stack">
+            <!-- 1-Instagram Video -->
+            <div class="insta-box">
+                <blockquote class="instagram-media" data-instgrm-permalink="BILAN_BIRINCHI_SILKANI_YOZING" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:16px; margin:0; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
             </div>
 
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <button class="video-mute-btn" onclick="toggleVideoMute(this)"><i class="fa-solid fa-volume-xmark"></i></button>
-                    <video class="video-frame" muted playsinline controls>
-                        <source src="video2.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video-info">
-                    <span class="video-name">Loyiha #2</span>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <button class="video-mute-btn" onclick="toggleVideoMute(this)"><i class="fa-solid fa-volume-xmark"></i></button>
-                    <video class="video-frame" muted playsinline controls>
-                        <source src="video3.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video-info">
-                    <span class="video-name">Loyiha #3</span>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <button class="video-mute-btn" onclick="toggleVideoMute(this)"><i class="fa-solid fa-volume-xmark"></i></button>
-                    <video class="video-frame" muted playsinline controls>
-                        <source src="video4.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video-info">
-                    <span class="video-name">Loyiha #4</span>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <button class="video-mute-btn" onclick="toggleVideoMute(this)"><i class="fa-solid fa-volume-xmark"></i></button>
-                    <video class="video-frame" muted playsinline controls>
-                        <source src="video5.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="video-info">
-                    <span class="video-name">Loyiha #5</span>
-                    <div class="rating-stars">
-                        <i class="fa-solid fa-star" onclick="setRating(this, 1)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 2)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 3)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 4)"></i>
-                        <i class="fa-solid fa-star" onclick="setRating(this, 5)"></i>
-                    </div>
-                </div>
+            <!-- 2-Instagram Video -->
+            <div class="insta-box">
+                <blockquote class="instagram-media" data-instgrm-permalink="BILAN_IKKINCHI_SILKANI_YOZING" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:16px; margin:0; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
             </div>
         </div>
 
+        <!-- Instagram Skripti (Videolar chiroyli chiqishi uchun muhim) -->
+        <script async src="//www.instagram.com/embed.js"></script>
+
+        <!-- Bog'lanish -->
         <div class="section-title">
             <i class="fa-solid fa-paper-plane"></i> Bog'lanish
         </div>
@@ -545,9 +397,8 @@
     </div>
 
     <script>
-        // Musiqa va Temalar (Siz so'ragan ketma-ketlikda)
         const playlist = [
-            { src: "ჩუბინა   East Duo.m4a", name: "Chubina East Duo", theme: "theme-1" },
+            { src: "Chubina East Duo.m4a", name: "Chubina East Duo", theme: "theme-1" },
             { src: "17) Emotional - Think Music.mp3", name: "Emotional - Think Music (1)", theme: "theme-2" },
             { src: "18) Emotional - Think Music.mp3", name: "Emotional - Think Music (2)", theme: "theme-3" }
         ];
@@ -592,38 +443,6 @@
 
         function changeVolume(val) {
             audio.volume = val;
-        }
-
-        // Video ovozini yoqish/o'chirish tugmasi funksiyasi
-        function toggleVideoMute(btn) {
-            const video = btn.parentElement.querySelector('video');
-            const icon = btn.querySelector('i');
-            
-            if (video.muted) {
-                video.muted = false;
-                icon.className = "fa-solid fa-volume-high";
-                btn.style.background = "var(--accent-color)";
-                btn.style.color = "#ffffff";
-            } else {
-                video.muted = true;
-                icon.className = "fa-solid fa-volume-xmark";
-                btn.style.background = "rgba(0, 0, 0, 0.6)";
-                btn.style.color = "#ffffff";
-            }
-        }
-
-        // Yulduzchalar funksiyasi
-        function setRating(starElement, ratingNumber) {
-            const starsContainer = starElement.parentElement;
-            const stars = starsContainer.querySelectorAll('i');
-            
-            stars.forEach((star, index) => {
-                if (index < ratingNumber) {
-                    star.classList.add('active');
-                } else {
-                    star.classList.remove('active');
-                }
-            });
         }
     </script>
 </body>
