@@ -1,2 +1,2 @@
-# -fatxulla-zeboxon-wedding
-To’yga taklifnoma💍
+# -Portfolio XANIMKULOV PRO
+XANIMKULOV UMRZOQ
