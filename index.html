@@ -15,8 +15,8 @@
         }
 
         body {
-            background-color: #0b0b0f;
-            color: #ffffff;
+            background-color: #0b1310; /* To'q yashil-qora tusli skromni fon */
+            color: #f4f6f4;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -25,28 +25,28 @@
             overflow-x: hidden;
         }
 
-        /* Liquid Fon Effektlari */
+        /* To'q yashil va malochniy suyuq (Liquid) nurlar */
         .bg-blob1 {
             position: absolute;
-            top: -100px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            filter: blur(90px);
-            opacity: 0.5;
+            top: -120px;
+            left: -120px;
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, #064e3b, #047857);
+            filter: blur(100px);
+            opacity: 0.45;
             z-index: -1;
         }
 
         .bg-blob2 {
             position: absolute;
-            bottom: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #ec4899, #8b5cf6);
-            filter: blur(90px);
-            opacity: 0.5;
+            bottom: -120px;
+            right: -120px;
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, #0f766e, #134e4a);
+            filter: blur(100px);
+            opacity: 0.4;
             z-index: -1;
         }
 
@@ -56,10 +56,10 @@
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(244, 246, 244, 0.12);
             border-radius: 36px;
             padding: 30px 20px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
 
         /* Profil Qismi */
@@ -74,7 +74,7 @@
             margin: 0 auto 15px;
             border-radius: 50%;
             padding: 3px;
-            background: linear-gradient(135deg, #3b82f6, #ec4899);
+            background: linear-gradient(135deg, #059669, #fef08a); /* Yashil va malochniy/sariqimtir hoshiya */
         }
 
         .avatar-box img {
@@ -87,13 +87,13 @@
         .username {
             font-size: 22px;
             font-weight: 700;
-            color: #ffffff;
+            color: #fef9c3; /* Malochniy tus */
             margin-bottom: 4px;
         }
 
         .fullname {
             font-size: 14px;
-            color: #9ca3af;
+            color: #a3b899;
             font-weight: 500;
         }
 
@@ -106,8 +106,8 @@
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(244, 246, 244, 0.08);
             padding: 12px 8px;
             border-radius: 20px;
             text-align: center;
@@ -116,7 +116,7 @@
         .stat-num {
             font-size: 16px;
             font-weight: 700;
-            color: #f43f5e;
+            color: #34d399; /* Och yashil */
             margin-bottom: 2px;
         }
 
@@ -127,10 +127,10 @@
 
         /* Portfolio (Videolar) Bo'limi */
         .section-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             margin-bottom: 15px;
-            color: #e5e7eb;
+            color: #fef9c3;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -141,7 +141,7 @@
             flex-direction: column;
             gap: 15px;
             margin-bottom: 25px;
-            max-height: 350px;
+            max-height: 360px;
             overflow-y: auto;
             padding-right: 5px;
         }
@@ -155,8 +155,8 @@
         }
 
         .video-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(244, 246, 244, 0.08);
             border-radius: 20px;
             padding: 12px;
             display: flex;
@@ -168,7 +168,7 @@
             width: 100%;
             height: 180px;
             border-radius: 14px;
-            background: #181820;
+            background: #0f1715;
             object-fit: cover;
         }
 
@@ -193,12 +193,12 @@
 
         .rating-stars i {
             font-size: 14px;
-            color: #4b5563;
+            color: #374151;
             transition: color 0.2s;
         }
 
         .rating-stars i.active {
-            color: #f59e0b;
+            color: #fef08a; /* Malochniy-sariq yulduzcha */
         }
 
         /* Bog'lanish Tugmalari */
@@ -209,8 +209,8 @@
         }
 
         .contact-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(244, 246, 244, 0.1);
             padding: 12px;
             border-radius: 18px;
             color: #ffffff;
@@ -225,18 +225,18 @@
         }
 
         .contact-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             transform: translateY(-2px);
         }
 
         .contact-btn.tg {
-            background: linear-gradient(135deg, rgba(0, 136, 204, 0.2), rgba(0, 136, 204, 0.4));
-            border-color: rgba(0, 136, 204, 0.4);
+            background: linear-gradient(135deg, rgba(6, 95, 70, 0.3), rgba(4, 120, 87, 0.5));
+            border-color: rgba(52, 211, 153, 0.3);
         }
 
         .contact-btn.tel {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.4));
-            border-color: rgba(16, 185, 129, 0.4);
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.3), rgba(13, 148, 136, 0.5));
+            border-color: rgba(45, 212, 191, 0.3);
         }
     </style>
 </head>
@@ -249,8 +249,7 @@
         <!-- Profil Qismi -->
         <div class="profile-header">
             <div class="avatar-box">
-                <!-- Avatar rasmingiz -->
-                <img src="image_4.png" alt="Xanimkulov Umrzoq">
+                <img src="image_3.png" alt="Xanimkulov Umrzoq">
             </div>
             <div class="username">xanimkulov.pro</div>
             <div class="fullname">Xanimkulov Umrzoq</div>
@@ -280,9 +279,8 @@
         <div class="videos-container">
             <!-- 1-Video -->
             <div class="video-card">
-                <video class="video-frame" controls poster="">
-                    <source src="VIDEO_HAVolasi_1.mp4" type="video/mp4">
-                    Sizning brauzeringiz videoni qo'llab-quvvatlamaydi.
+                <video class="video-frame" controls>
+                    <source src="VIDEO_1.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #1</span>
@@ -299,7 +297,7 @@
             <!-- 2-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_HAVolasi_2.mp4" type="video/mp4">
+                    <source src="VIDEO_2.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #2</span>
@@ -316,7 +314,7 @@
             <!-- 3-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_HAVolasi_3.mp4" type="video/mp4">
+                    <source src="VIDEO_3.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #3</span>
@@ -333,7 +331,7 @@
             <!-- 4-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_HAVolasi_4.mp4" type="video/mp4">
+                    <source src="VIDEO_4.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #4</span>
@@ -350,7 +348,7 @@
             <!-- 5-Video -->
             <div class="video-card">
                 <video class="video-frame" controls>
-                    <source src="VIDEO_HAVolasi_5.mp4" type="video/mp4">
+                    <source src="VIDEO_5.mp4" type="video/mp4">
                 </video>
                 <div class="video-info">
                     <span class="video-name">Loyiha #5</span>
@@ -381,7 +379,6 @@
     </div>
 
     <script>
-        // Yulduzchalarni bosib baholash funksiyasi
         function setRating(starElement, ratingNumber) {
             const starsContainer = starElement.parentElement;
             const stars = starsContainer.querySelectorAll('i');
