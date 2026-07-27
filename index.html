@@ -237,7 +237,7 @@
             color: var(--text-secondary);
         }
 
-        /* Portfolio (Ustma-ust Instagram Videolar) */
+        /* Portfolio (Instagram Videolar Tugmasi) */
         .section-title {
             font-size: 15px;
             font-weight: 600;
@@ -251,23 +251,43 @@
         .instagram-stack {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             margin-bottom: 22px;
         }
 
-        .insta-box {
+        .insta-link-btn {
             background: var(--card-bg);
-            border-radius: 24px;
-            padding: 10px;
             border: 1px solid var(--border-color);
-            overflow: hidden;
+            padding: 16px 20px;
+            border-radius: 20px;
+            color: var(--text-color);
+            text-decoration: none;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 600;
         }
 
-        .insta-box iframe {
-            border-radius: 16px;
-            max-width: 100%;
+        .insta-link-btn:active {
+            transform: scale(0.96);
+        }
+
+        .insta-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .insta-left i {
+            font-size: 20px;
+            color: #E1306C;
+        }
+
+        .insta-link-btn span {
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 500;
         }
 
         /* Bog'lanish Tugmalari */
@@ -360,25 +380,30 @@
             </div>
         </div>
 
-        <!-- Portfolio (Ustma-ust turgan 2 ta Instagram Video) -->
+        <!-- Instagram Portfolio -->
         <div class="section-title">
             <i class="fa-solid fa-clapperboard"></i> Instagram Portfolio
         </div>
 
         <div class="instagram-stack">
-            <!-- 1-Instagram Video -->
-            <div class="insta-box">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbHsSCao46I/?igsh=MWkxaGtzOW1hNG40eA==" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:16px; margin:0; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
-            </div>
+            <!-- 1-Video -->
+            <a href="https://www.instagram.com/reel/DbHsSCao46I/?igsh=MWkxaGtzOW1hNG40eA==" target="_blank" class="insta-link-btn">
+                <div class="insta-left">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Reels 1-video</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px; color: var(--text-secondary);"></i>
+            </a>
 
-            <!-- 2-Instagram Video -->
-            <div class="insta-box">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbHsECQol7R/?igsh=MWwwOG5zdG9pZXp6OA==" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:16px; margin:0; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
-            </div>
+            <!-- 2-Video -->
+            <a href="https://www.instagram.com/reel/DbHsECQol7R/?igsh=MWwwOG5zdG9pZXp6OA==" target="_blank" class="insta-link-btn">
+                <div class="insta-left">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Reels 2-video</span>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px; color: var(--text-secondary);"></i>
+            </a>
         </div>
-
-        <!-- Instagram Skripti (Videolar ko'rinishi uchun muhim) -->
-        <script async src="//www.instagram.com/embed.js"></script>
 
         <!-- Bog'lanish -->
         <div class="section-title">
